@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --Dimgray: #676767;
+  --MidnightExpress: #212b36;
+  --BlueBayoux: #637381;
+  --White: #fff;
+  --CatalinaBlue: #24355f;
+  --Alizarin: #ec2a2a;
+  --Black: #000;
+  --Solitude: #dbe1e6;
+  --Cararra: #ece5d8;
+  --Bianca: #f4ecdd;
+  --Linen: #f9f1e3;
+  --FloralWhite: #fffcf8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e1e1e;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.product_header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.product_header .product__header-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: var(--MidnightExpress);
+  animation: textFadeIn 0.7s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.product_header .product__header-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: var(--Dimgray);
+  letter-spacing: 10px;
+  animation: textFadeIn 0.6s ease-out forwards;
+  animation-delay: 0s;
+  opacity: 0;
+}
+
+.product_header .product__header-solgan {
+  font-size: 1.1875rem;
+  font-weight: 400;
+  color: var(--Dimgray);
+  animation: textFadeIn 0.7s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 45px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin: 0 25px;
+  padding-bottom: 0.25rem;
+  position: relative;
+}
+
+.navbar ul li:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--CatalinaBlue);
+  transition: width 0.3s ease-out;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+}
+
+.navbar ul li a {
+  font-size: 1.125rem;
+  text-decoration: none;
+  color: var(--Dimgray);
+}
+
+.navbar ul li a.active {
+  font-weight: 700;
+  color: var(--Black);
+}
+
+.product_wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.product_card {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto;
+  gap: 15px;
+  padding: 20px;
+  background-color: var(--White);
+  border-radius: 5px;
+  transition: box-shadow 0.2s ease-in;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardFadeIn 0.6s ease-out forwards;
+}
+
+.product_card:nth-child(1) {
+  animation-delay: 0.6s;
+}
+.product_card:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.product_card:nth-child(3) {
+  animation-delay: 1s;
+}
+.product_card:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+.product_card:nth-child(2) {
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.product_card:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  cursor: pointer;
+}
+
+.product_card .product_image-soma {
+  grid-row: 1;
+}
+
+.product_image-soma img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product_card h3 {
+  grid-row: 2;
+}
+
+.product_card p:nth-of-type(1) {
+  grid-row: 3;
+}
+
+.product_card hr {
+  grid-row: 4;
+}
+
+.product_card p:nth-of-type(2) {
+  grid-row: 5;
+}
+
+hr {
+  width: 20%;
+  margin: 2rem auto;
+  background-color: var(--CatalinaBlue);
+}
+
+.price {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  color: var(--Alizarin);
+}
+
+/* Responsive Section */
+
+@media (max-width: 750px) {
+  .navbar ul {
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .navbar ul li {
+    margin: 0 20px;
+  }
+
+  .navbar ul {
+    text-align: left;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .navbar ul li {
+    margin: 0 15px;
+  }
+}
+
+/* Animation Section */
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
